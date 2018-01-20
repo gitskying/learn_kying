@@ -1,9 +1,7 @@
 class Node(object):
     def __init__(self, item):
         self.item = item
-        # 记录左孩子
         self.lChild = None
-        # 记录右孩子
         self.rChild = None
 
 
@@ -58,18 +56,18 @@ class Tree(object):
             return
         self.post_order(node.lChild)
         self.post_order(node.rChild)
-        print(node.item,end=" ")
+        print(node.item, end=" ")
 
     def in_order(self, node):
         if node is None:
             return
         self.in_order(node.lChild)
-        print(node.item,end=" ")
+        print(node.item, end=" ")
         self.in_order(node.rChild)
 
     def pre_order(self, node):
         if node is None:
             return
-        print(node.item,end=" ")
+        print(node.item, end=" ")
         self.pre_order(node.lChild)
         self.pre_order(node.rChild)
